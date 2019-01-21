@@ -111,10 +111,15 @@ public class Gateway3DSecureViewController: UIViewController, WKNavigationDelega
         
         var constraints: [NSLayoutConstraint] = []
         if #available(iOSApplicationExtension 11.0, *) {
-            constraints.append(NSLayoutConstraint(item: navBar, attribute: .top, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 0))
+            if #available(iOS 11.0, *) {
+                constraints.append(NSLayoutConstraint(item: navBar, attribute: .top, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 0))
+            } else {
+                // Fallback on earlier versions
+            }
         } else {
             constraints.append(NSLayoutConstraint(item: navBar, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0))
         }
+        
         
         constraints.append(NSLayoutConstraint(item: navBar, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0))
         constraints.append(NSLayoutConstraint(item: navBar, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0))
