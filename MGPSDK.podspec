@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "MGPSDK"
   s.version      = "0.1"
-  s.summary      = ""
+  s.summary      = "vinsi Modified SDK"
   s.description  = <<-DESC
     Your description here.
   DESC
