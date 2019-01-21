@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "MGPSDK"
+  s.name         = "MPGSDK"
   s.version      = "0.1"
   s.summary      = "vinsi Modified SDK"
   s.description  = <<-DESC
